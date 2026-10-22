@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Practical5</string>
+    <string name="app_name">Chinese Municipalities</string>
+    <string name="hint_input">name of a municipality</string>
+    <string name="label_input">I want to know about:</string>
+    <string name="title_main">Municipalities in China</string>
+    <string name="btn_visit">Visit site</string>
+    <string name="error_empty">Please enter a municipality name</string>
+    <string name="error_invalid">Unsupported municipality. Use Beijing, Shanghai, Tianjin or Chongqing</string>
 </resources>
