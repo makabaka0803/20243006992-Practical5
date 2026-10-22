@@ -10,12 +10,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/title_main"
-            android:textSize="28sp"
-            android:textAlignment="center"/>
+            android:layout_height="320dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/chinese_municipalities"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/title_main"/>
 
         <TextView
             android:layout_width="wrap_content"
