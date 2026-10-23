@@ -2,39 +2,38 @@ package com.example.practical5;
 
 public class TextProcessor {
 
-    // Store the list of valid municipality names
-    private final String[] cityArray;
-
-    // Constructor receives the valid municipality string‑array from activity
-    public TextProcessor(String[] inputArray) {
-        cityArray = inputArray;
+    // Check whether the input municipality name is valid
+    public static boolean isValid(String input) {
+        if (input == null) return false;
+        String city = input.trim();
+        return city.equalsIgnoreCase("Beijing")
+                || city.equalsIgnoreCase("Shanghai")
+                || city.equalsIgnoreCase("Tianjin")
+                || city.equalsIgnoreCase("Chongqing");
     }
 
-    // Check whether user input is a valid municipality, case‑insensitive
-    public boolean isValidCity(String userInput) {
-        if (userInput == null || userInput.isEmpty()) {
-            return false;
+    // Process input, return standardized city name
+    public static String processMunicipality(String input) {
+        if (input == null) return null;
+        String raw = input.trim().toLowerCase();
+        String result = null;
+        switch (raw) {
+            case "beijing":
+                result = "Beijing";
+                break;
+            case "shanghai":
+                result = "Shanghai";
+                break;
+            case "tianjin":
+                result = "Tianjin";
+                break;
+            case "chongqing":
+                result = "Chongqing";
+                break;
+            default:
+                result = null;
+                break;
         }
-        String inputTrim = userInput.trim();
-        for (String city : cityArray) {
-            if (city.equalsIgnoreCase(inputTrim)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    // Return properly capitalised municipality name; return null for invalid input
-    public String getStandardName(String userInput) {
-        if (userInput == null || userInput.isEmpty()) {
-            return null;
-        }
-        String inputTrim = userInput.trim();
-        for (String city : cityArray) {
-            if (city.equalsIgnoreCase(inputTrim)) {
-                return city;
-            }
-        }
-        return null;
+        return result;
     }
 }
